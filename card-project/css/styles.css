@@ -13,6 +13,13 @@ img {
   height: auto;
 }
 
+/* || VARIABLES */
+:root {
+  /* COLOR */
+  --BGCOLOR: #475569
+}
+
+
 /* || UTILITY  CLASSES*/
 .nowrap {
   white-space: nowrap;
@@ -26,7 +33,7 @@ html {
 body {
   font: 1.5rem "Nunito", sans-serif;
   min-height: 100vh;
-  background-color: #475569;
+  background-color: var(--BGCOLOR);
   background-image: radial-gradient(whitesmoke, #475569);
   display: flex;
   flex-direction: column;
@@ -52,14 +59,25 @@ nav {
   display: flex;
   justify-content: space-evenly;
 }
-nav a,
-nav a:visited {
+/* Add to notes */
+nav a:any-link {
   color: #000;
 }
 
-nav a:hover,
-nav a:focus {
+.card:target {
+  border: 2px rebeccapurple solid;
+}
+
+.card img:not([alt]) {
+  border: 10px solid red;
+}
+
+nav :is(a:hover, a:focus) {
   color: hsla(0, 0%, 20%, 0.6);
+}
+
+nav a:active {
+  color: red;
 }
 
 main {
@@ -102,6 +120,10 @@ footer {
   font-size: 2rem;
   margin: 1rem;
   text-align: center;
+}
+
+.card figcaption::after {
+  content: ")"
 }
 
 /* || SMALL */
