@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --header-bgcolor: #333;
+  --header-color: whitesmoke;
+}
+
+html {
+  font: 1.5rem "Nunito", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+header {
+  background-color: var(--header-bgcolor);
+  color: var(--header-color);
+}
