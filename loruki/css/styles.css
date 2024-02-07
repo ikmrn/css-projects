@@ -59,6 +59,12 @@ pre {
   color: var(--text-white);
   padding: 10px;
 }
+
+.hidden {
+  visibility: hidden;
+  height: 0;
+}
+
 /* || NAVBAR */
 .navbar {
   background-color: var(--primary-color);
@@ -105,14 +111,21 @@ pre {
   overflow: visible;
 }
 
+.showcase-text {
+  animation: slideInFromLeft 1s ease-in;
+}
+
 .showcase-form {
   position: relative;
   top: 60px;
-  height: 350px;
-  width: 400px;
+  min-height: 300px;
+  min-width: 300px;
+  width: auto;
+  height: auto;
   padding: 2rem;
   z-index: 100;
   justify-self: flex-end;
+  animation: slideInFromRight 1s ease-in;
 }
 
 .showcase-form .form-control {
@@ -150,6 +163,7 @@ pre {
 /* || STATS */
 .stats {
   padding: 100px;
+  animation: slideInFromBottom 1s ease-in;
 }
 
 .stats-heading {
@@ -258,6 +272,43 @@ pre {
   margin: 0 10px;
 }
 
+/* || ANIMATIONS */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
 /* || TABLES AND UNDER */
 @media (max-width: 768px) {
   .grid,
@@ -281,11 +332,13 @@ pre {
   .showcase-text {
     text-align: center;
     margin-top: 40px;
+    animation: slideInFromTop 1s ease-in;
   }
 
   .showcase-form {
     justify-self: center;
     margin: auto;
+    animation: slideInFromBottom 1s ease-in;
   }
 
   .cli .grid > *:first-child {
