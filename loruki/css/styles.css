@@ -14,6 +14,9 @@
   --grey: #333;
   --light-grey: #b4becb;
   --primary-color: #047aed;
+  --secondary-color: #1c3fa8;
+  --dark-color: #002240;
+  --light-color: #f4f4f4;
   --text-white: #fff;
 }
 
@@ -140,4 +143,54 @@ img {
 /* || STATS */
 .stats {
   padding: 100px;
+}
+
+.stats-heading {
+  max-width: 500px;
+  margin: auto;
+}
+
+.stats .grid h3 {
+  font-size: 2rem;
+}
+
+.stats .grid p {
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+/* || CLI */
+.cli .grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.cli .grid > *:first-child {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+/* || CLOUD  */
+.cloud .grid {
+  grid-template-columns: 4fr 3fr;
+}
+
+/* || LANGUAGES */
+.languages .flex {
+  flex-wrap: wrap;
+}
+
+.languages .card {
+  min-width: 12d0px;
+  text-align: center;
+  margin: 18px 10px 40px;
+}
+
+.languages .card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.languages .card:hover {
+  transform: translateY(-15px);
+  transition: transform 0.2s ease-in;
 }
