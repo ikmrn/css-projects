@@ -84,6 +84,15 @@
   color: var(--grey);
 }
 
+.bg-dark a,
+.btn-dark a,
+.bg-secondary a,
+.btn-secondary a,
+.bg-primary a,
+.btn-primary a {
+  color: #fff;
+}
+
 /* || TEXT SIZES */
 .lead {
   font-size: 1.25rem;
