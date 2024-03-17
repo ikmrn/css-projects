@@ -1,0 +1,131 @@
+/* Reset */
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  height: 100%;
+}
+
+input {
+  background: none;
+  border: none;
+}
+input:focus,
+input:focus-within {
+  outline: none;
+}
+
+/* Variables */
+:root {
+  --border-color: hsla(0, 0%, 96%, 0.4);
+  --primary-color: whitesmoke;
+  --checkbox-color: rgb(141, 137, 137);
+}
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100%;
+  color: var(--primary-color);
+}
+
+section {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("./wallpaperflare.com_wallpaper.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+.form {
+  border: solid 2px var(--border-color);
+  border-radius: 15px;
+  padding: 50px 30px;
+  backdrop-filter: blur(20px);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  width: clamp(250px, 90vw, 420px);
+}
+.form__input {
+  border-bottom: solid 2px var(--border-color);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form__input {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 20px;
+  width: 100%;
+}
+.form__input-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 4px 0 8px;
+}
+.form__input-field input {
+  width: 90%;
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+.form__forget {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 20px;
+}
+
+.form__forget a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.form__forget input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+.form__login {
+  margin: 20px 0;
+  width: 100%;
+  border-radius: 999px;
+  border: none;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.form__login:hover {
+  border: solid 2px var(--border-color);
+  background: transparent;
+  color: var(--primary-color);
+}
+
+.form__register a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 700;
+}
