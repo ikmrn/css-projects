@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const moon = document.getElementById("moon");
   const mountainsBehind = document.getElementById("mountains-behind");
   const text = document.getElementById("moon-text");
-
-  const header = document.querySelector("header");
+  const navList = document.querySelector(".nav__list");
   const btn = document.querySelector(".hero__btn");
+  const hamburgerBtn = document.querySelector(".nav__hamburger");
 
   Array.from(navLinks).forEach((element) => {
     element.addEventListener("click", () => {
@@ -23,6 +23,21 @@ document.addEventListener("DOMContentLoaded", () => {
     text.style.marginRight = `${scroll * 3}px`;
     text.style.marginTop = `${scroll * 1.5}px`;
     btn.style.marginTop = `${scroll * 1.5}px`;
-    header.style.top = `${scroll * 0.75}px`;
+  });
+
+  hamburgerBtn.addEventListener("click", () => {
+    if (navList.classList.contains("hidden")) {
+      navList.classList.remove("hidden");
+      hamburgerBtn.classList.add("animate-hamburger");
+      setTimeout(() => {
+        navList.classList.add("open");
+      }, 10);
+    } else {
+      navList.classList.remove("open");
+      hamburgerBtn.classList.remove("animate-hamburger");
+      setTimeout(() => {
+        navList.classList.add("hidden");
+      }, 500);
+    }
   });
 });
