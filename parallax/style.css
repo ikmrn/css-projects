@@ -1,0 +1,128 @@
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(#2b1055, #7598de);
+  overflow-x: hidden;
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  z-index: 1;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__logo {
+  color: whitesmoke;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 5px;
+}
+
+.nav__list {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.nav__list li a {
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 6px 15px;
+  border-radius: 20px;
+}
+
+.nav__list li a:hover,
+.nav__list li a.active {
+  background-color: aliceblue;
+  color: #2b1055;
+}
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#moon {
+  mix-blend-mode: screen;
+}
+#moon-text {
+  position: absolute;
+  right: -250px;
+  color: whitesmoke;
+  white-space: normal;
+  font-size: 8.5vw;
+}
+
+.hero__btn {
+  text-decoration: none;
+  padding: 8px 30px;
+  border-radius: 40px;
+  background-color: whitesmoke;
+  color: #2b1055;
+  transform: translateY(130px);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #1c0522, transparent);
+  z-index: 1;
+}
+
+.info {
+  position: relative;
+  padding: 100px;
+  background-color: #1c0522;
+}
+
+.info__title {
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  color: whitesmoke;
+}
+
+.info__text {
+  font-size: 1.25rem;
+  color: whitesmoke;
+}
