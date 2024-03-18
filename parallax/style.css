@@ -26,13 +26,14 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 30px 100px;
+  padding: 30px clamp(35px, 5vw, 100px);
   z-index: 1;
 }
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .nav__logo {
   color: whitesmoke;
@@ -45,10 +46,14 @@ header {
 
 .nav__list {
   display: flex;
-  list-style-type: none;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: min(3vw, 50px);
+  list-style-type: none;
+}
+
+.nav__list.hidden {
+  display: none;
 }
 .nav__list li a {
   text-decoration: none;
@@ -62,6 +67,40 @@ header {
   background-color: aliceblue;
   color: #2b1055;
 }
+
+.nav__hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.nav__hamburger-top,
+.nav__hamburger-mid,
+.nav__hamburger-bottom {
+  width: 30px;
+  height: 4px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.animate-hamburger {
+  .nav__hamburger-top {
+    transform: translateY(10px) rotate(225deg);
+  }
+  .nav__hamburger-mid {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  .nav__hamburger-bottom {
+    transform: translateY(-10px) rotate(-225deg);
+  }
+}
+
 .hero {
   position: relative;
   width: 100%;
@@ -88,7 +127,7 @@ header {
   right: -250px;
   color: whitesmoke;
   white-space: normal;
-  font-size: 8.5vw;
+  font-size: calc((7.5vw) + 10px);
 }
 
 .hero__btn {
@@ -125,4 +164,36 @@ header {
 .info__text {
   font-size: 1.25rem;
   color: whitesmoke;
+}
+
+@media only screen and (min-width: 641px) {
+  .nav__list {
+    display: flex;
+  }
+  .nav__hamburger {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 400px;
+    position: absolute;
+    width: 100vw;
+    top: -400px;
+    right: -35px;
+    background-color: hsla(263, 69%, 20%, 0.42);
+    padding-top: 120px;
+    padding-bottom: 50px;
+    backdrop-filter: blur(8px);
+    transition: transform 0.5s ease;
+  }
+  .nav__list.open {
+    transform: translateY(365px);
+    transition: transform 0.5s ease;
+  }
 }
